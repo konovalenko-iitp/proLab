@@ -18,8 +18,9 @@ for i = 1:size(sizes, 2)
     err
 end
 
-
-
+sRGB = vertex
+XYZ = sRGB2XYZ(sRGB)
+proLab = XYZ2proLab(XYZ)
 
 
 
