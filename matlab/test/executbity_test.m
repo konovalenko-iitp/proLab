@@ -28,7 +28,7 @@ testing_on_datasets
 
 %% trunk\matlab\research
 
-noise_model_verification
+% noise_model_verification
 statistical_test
 test_Canon5DMarkIII_spectralSensitivity
 test_central_linearity
