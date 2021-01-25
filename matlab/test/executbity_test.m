@@ -75,16 +75,8 @@ test_xyY
 for_introduction
 generate_all_images
 plot_any_spectrum
-plot_chromaticity
 plot_chromaticity_frame
-plot_color_body
-plot_heteroscedasticity
 % plot_image_color_distribution
-plot_sample
-plot_simulate_camera_noise
-plot_sRGB_gamut
-
-
 
 
 
