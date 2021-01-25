@@ -4,7 +4,7 @@ function plot_color_body_projection(CS_name)
 %     d_lambda = 4;
     CS = color_spaces_collection(CS_name);
     AO = CS.axis_Lab_order;
-    cache_path = ['cache/color_body_', CS_name, '_projection_',num2str(d_lambda),'.mat'];
+    cache_path = ['search_optimal_proLab_param/cache/color_body_', CS_name, '_projection_',num2str(d_lambda),'.mat'];
     if exist(cache_path, 'file') == 0
         XYZ = get_color_body_boundary_mesh(d_lambda);
         CC = CS.transform_into(XYZ);
