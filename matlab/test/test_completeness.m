@@ -3,11 +3,14 @@ clc;
 clear;
 
 addpath(genpath('..'));
-syms a11 a12 a13 a14 a21 a22 a23 a24 a31 a32 a33 a34 b1 b2 b3 b4
 
-A = [a11 a12 a13 a14; a21 a22 a23 a24; a31 a32 a33 a34; 0 0 0 1]
-B = [1 0 0 0; 0 1 0 0; 0 0 1 0; b1 b2 b3 1]
-A*B
+%%
+
+% syms a11 a12 a13 a14 a21 a22 a23 a24 a31 a32 a33 a34 b1 b2 b3 b4
+
+% A = [a11 a12 a13 a14; a21 a22 a23 a24; a31 a32 a33 a34; 0 0 0 1]
+% B = [1 0 0 0; 0 1 0 0; 0 0 1 0; b1 b2 b3 1]
+% A*B
 
 %%
 

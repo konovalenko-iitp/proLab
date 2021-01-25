@@ -1,11 +1,11 @@
 
 function [constraints, DT, C] = get_color_body_constraints(d_lambda) 
-    cache_path = ['cache/color_body_constraints_',num2str(d_lambda),'.mat'];
+    cache_path = ['search_optimal_proLab_param/cache/color_body_constraints_',num2str(d_lambda),'.mat'];
     if exist(cache_path, 'file') == 0
         boundary_mesh = get_color_body_boundary_mesh(d_lambda);
         DT = delaunayTriangulation(boundary_mesh);
         [C,~] = convexHull(DT);
-        center = [D65/2'; 1];
+        center = [D65/2, 1];
         M = size(C, 1);
         constraints = zeros(M, 4);
         for j = 1:M
@@ -16,7 +16,7 @@ function [constraints, DT, C] = get_color_body_constraints(d_lambda)
             normal = cross(c2-c1, c3-c1);
             normal = normal / norm(normal);
             constr = [normal, -c1*normal'];
-            if constr*center > 0
+            if constr*center' > 0
                 constr = - constr;
             end
             constraints(j, :) = constr;

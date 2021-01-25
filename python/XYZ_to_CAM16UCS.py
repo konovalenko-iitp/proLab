@@ -6,7 +6,7 @@ from scipy.io import savemat
 request = loadmat('../python/request.mat')
 XYZ = request['XYZ']
 reference_illuminant  = loadmat('../python/reference_illuminant.mat')
-XYZ_w = reference_illuminant['ref_ill']
+XYZ_w = reference_illuminant['ref_illum']
 L_A = 0.20
 Y_b = 0.20
 surround = colour.CAM16_VIEWING_CONDITIONS['Average']

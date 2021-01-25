@@ -6,7 +6,7 @@ close all;
 addpath(genpath('..'));
 
 CS_list = {'LMS'; 'deviceRGB'; 'CIE XYZ'; 'CIE xyY'; 'linRGB'; 'sRGB'; 'CIELAB'; 'CAM16-UCS'; 'proLab'};
-%     CS_list = {'proLab'};
+% CS_list = {'CIE XYZ'; 'proLab'};
 
 d_lambda = 10; % 2
 
@@ -83,9 +83,9 @@ for CS_num = 1:size(CS_list, 1)
         set(gca,'ZDir', 'reverse');
     end
 
-%         XYZ = vertex*diag(D65);
-%         CC = CS.transform_into(XYZ);
-%         plot_cube(CC, [0 0 0]);
+%     XYZ_D65 = vertex*diag(D65);
+%     CC_D65 = CS.transform_into(XYZ_D65);
+%     plot_cube([CC_D65(:, abs(AO(1))), CC_D65(:, abs(AO(2))), CC_D65(:, abs(AO(3)))], [0 0 0]);
 
     pic_name = ['images/body/', CS.name, '_color_body.png']; 
     saveas(fig, pic_name);

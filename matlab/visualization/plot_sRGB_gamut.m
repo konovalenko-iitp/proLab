@@ -1,7 +1,7 @@
 
 function plot_sRGB_gamut(param)
 
-    addpath(genpath(pwd));
+    addpath(genpath('..'));
     
     if nargin == 0
         param = proLab_param;
@@ -16,6 +16,7 @@ function plot_sRGB_gamut(param)
         CS_list = {'proLab'};
     else
         CS_list = {'LMS'; 'deviceRGB'; 'CIE XYZ'; 'CIE xyY'; 'linRGB'; 'sRGB'; 'CIELAB'; 'CAM16-UCS'; 'proLab'};
+%         CS_list = {'proLab'};
     end
     TX = (0:0.05:1)';
     T0 = zeros(size(TX));

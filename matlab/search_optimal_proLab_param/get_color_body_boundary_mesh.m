@@ -1,6 +1,6 @@
 
 function boundary_mesh = get_color_body_boundary_mesh(d_lambda)
-    cache_path = ['cache/color_body_boundary_mesh_',num2str(d_lambda),'.mat'];
+    cache_path = ['search_optimal_proLab_param/cache/color_body_boundary_mesh_',num2str(d_lambda),'.mat'];
     if exist(cache_path, 'file') == 0
         formulary = '1931_FULL';
         lambda = (300:d_lambda:830)';

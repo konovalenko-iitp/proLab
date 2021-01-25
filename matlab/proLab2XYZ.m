@@ -1,19 +1,22 @@
 
-function XYZ = proLab2XYZ(proLab, param)
-    if nargin == 1
+function XYZ = proLab2XYZ(proLab, ref_illum, param)
+    if nargin < 2
+        ref_illum = reference_illuminant;
+    end
+    if nargin < 3
         param = proLab_param;
     end
     if iscell(proLab)
         XYZ = cell(1, 2);
         for i = 1:2
-            XYZ{i} = f_reverse(proLab{i}, param);
+            XYZ{i} = f_reverse(proLab{i}, ref_illum, param);
         end
     else
-        XYZ = f_reverse(proLab, param);
+        XYZ = f_reverse(proLab, ref_illum, param);
     end
 end
 
-function XYZ = f_reverse(proLab, param)  
+function XYZ = f_reverse(proLab, ref_illum, param)  
     isImage = false;
     if size(size(proLab), 2) == 3
         [s1, s2, s3] = size(proLab);
@@ -26,7 +29,7 @@ function XYZ = f_reverse(proLab, param)
         M = m2M(param.m);
         XYZ = projTrans3D(proLab, M^(-1));
     end
-    XYZ = XYZ .* reference_illuminant;
+    XYZ = XYZ .* ref_illum;
     if isImage
         XYZ = reshape(XYZ, [s1, s2, s3]);
     end

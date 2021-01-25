@@ -45,9 +45,6 @@ disp('TEST ...');
 criterion_report(CDB_test, 'Uniformity', param);
 criterion_report(CDB_test, 'Homoscedasticity', param);
 
-% isOverWhite(param)
-g = penalty(param)
-
 plot_sRGB_gamut(param);
 
 
