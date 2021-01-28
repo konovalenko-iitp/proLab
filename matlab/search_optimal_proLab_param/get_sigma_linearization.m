@@ -1,8 +1,5 @@
 
 function Sigma = get_sigma_linearization(XYZ, CS_name, param)
-    if nargin == 2
-        param = proLab_param;
-    end
     CS_own = color_spaces_collection('deviceRGB');
     CC_own = CS_own.transform_into(XYZ);
     CC_own_max = CS_own.transform_into(reference_illuminant);

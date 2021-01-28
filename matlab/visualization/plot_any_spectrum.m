@@ -18,7 +18,7 @@ plot(lambda, XYZ(:,1), 'r');
 plot(lambda, XYZ(:,2), 'g');
 plot(lambda, XYZ(:,3), 'b');
 pic_name = 'images/CIEXYZ.png';
-saveas(fig, pic_name);
+% saveas(fig, pic_name);
 
 % CC = XYZ * LMS_matrix';
 CC = XYZ2deviceRGB(XYZ);

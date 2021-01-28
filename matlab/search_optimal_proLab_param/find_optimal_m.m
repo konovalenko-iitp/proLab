@@ -14,11 +14,10 @@ function m_optimal = find_optimal_m(ObjectiveFunction)
         else
             m = m_init(1, :) + 10*randn(1, 8);
         end
-% %         options = optimset('Display','iter','PlotFcns',@optimplotfval);
-%         options.MaxFunEvals = +Inf;
-%         options.MaxIter     = +Inf;
-%         m_opt = fminsearch(ObjectiveFunction,m,options);                    
-        m_opt = m;
+%         options = optimset('Display','iter','PlotFcns',@optimplotfval);
+        options.MaxFunEvals = +Inf;
+        options.MaxIter     = +Inf;
+        m_opt = fminsearch(ObjectiveFunction,m,options);                    
         minimum = ObjectiveFunction(m_opt);
         if minimum < best_minimum
             best_minimum = minimum;

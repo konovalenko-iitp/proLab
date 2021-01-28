@@ -53,7 +53,7 @@ if strcmp(brightness, 'max')
     sRGB = sRGB ./ max(sRGB,[],2); 
 end
 for CS_num = 1:size(CS_list, 1)
-    CS = color_spaces_collection(CS_list{CS_num});
+    CS = color_spaces_collection(CS_list{CS_num}, proLab_param);
     AO = CS.axis_Lab_order;
     CC = CS.transform_into(XYZ);
     fig = figure(CS_num);

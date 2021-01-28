@@ -18,7 +18,7 @@ CS_list = {'LMS'; 'deviceRGB'; 'CIE XYZ'; 'CIE xyY'; 'linRGB'; 'sRGB'; 'CIELAB';
 %     CS_list = {'proLab'};
 FontSize = 20;
 for CS_num = 1:size(CS_list, 1)
-    CS = color_spaces_collection(CS_list{CS_num});
+    CS = color_spaces_collection(CS_list{CS_num}, proLab_param);
     AO = CS.axis_Lab_order;
     CC = CS.transform_into(XYZ);
 %     size(CC)

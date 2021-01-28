@@ -1,8 +1,5 @@
 
 function handle = color_dist(METHOD, param)
-    if nargin == 1
-        param = proLab_param;
-    end
     switch METHOD
         case 'LMS'
             handle = @(XYZ) get_Eucl_distance(@XYZ2LMS, XYZ);
@@ -19,7 +16,7 @@ function handle = color_dist(METHOD, param)
         case 'CIELAB'
             handle = @(XYZ) get_Eucl_distance(@XYZ2Lab, XYZ);
         case 'proLab'
-            handle = @(XYZ) get_Eucl_distance(@(XYZ)XYZ2proLab(XYZ, reference_illuminant, param), XYZ);
+            handle = @(XYZ) get_Eucl_distance(@(XYZ)XYZ2proLab_model(XYZ, reference_illuminant, param), XYZ);
         case 'CAM16-UCS'
             handle = @(XYZ) get_Eucl_distance(@XYZ2CAM16UCS, XYZ);
         case 'CAM16-UCS^p'

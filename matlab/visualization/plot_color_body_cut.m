@@ -1,9 +1,10 @@
 
 function plot_color_body_cut(CS_name, Y)
     
-    d_lambda = 0.5;
+    %     d_lambda = 0.5;
+    d_lambda = 4;
     
-    cache_path = ['cache/color_body_cut_',num2str(d_lambda),'.mat'];
+    cache_path = ['search_optimal_proLab_param/cache/color_body_cut_',num2str(d_lambda),'.mat'];
     if exist(cache_path, 'file') == 0
         
         XYZ = get_color_body_boundary_mesh(d_lambda);
@@ -46,7 +47,7 @@ function plot_color_body_cut(CS_name, Y)
     else
         load(cache_path);
     end     
-    CS = color_spaces_collection(CS_name);
+    CS = color_spaces_collection(CS_name, proLab_param);
     CC = CS.transform_into(cut);
     AO = CS.axis_Lab_order;
 %     plot3(CC(:,abs(AO(1))),CC(:,abs(AO(2))),CC(:,abs(AO(3))),'.r');;

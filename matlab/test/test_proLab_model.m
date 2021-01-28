@@ -23,13 +23,9 @@ for i = 1:size(sizes, 2)
             XYZ = {rand(sizes{i}), rand(sizes{i})};
             proLab = {rand(sizes{i}), rand(sizes{i})};
         end
-        err = zeros(2,3);
-        err(1,1) = compare_data( XYZ,    proLab2XYZ( XYZ2proLab(XYZ)));
-        err(1,2) = compare_data( XYZ,    proLab2XYZ( XYZ2proLab(XYZ,    ref_illum), ref_illum));
-        err(1,3) = compare_data( XYZ,    proLab2XYZ( XYZ2proLab(XYZ,    ref_illum,  param), ref_illum, param));
-        err(2,1) = compare_data( proLab, XYZ2proLab( proLab2XYZ(proLab)));
-        err(2,2) = compare_data( proLab, XYZ2proLab( proLab2XYZ(proLab, ref_illum), ref_illum));
-        err(2,3) = compare_data( proLab, XYZ2proLab( proLab2XYZ(proLab, ref_illum,  param), ref_illum, param));
+        err = zeros(2,1);
+        err(1,1) = compare_data( XYZ,    proLab2XYZ_model( XYZ2proLab_model(XYZ,    ref_illum,  param), ref_illum, param));
+        err(2,1) = compare_data( proLab, XYZ2proLab_model( proLab2XYZ_model(proLab, ref_illum,  param), ref_illum, param));
         err = max(max(err));
         max_err = max(err, max_err);
     end

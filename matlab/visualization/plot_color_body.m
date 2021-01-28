@@ -21,7 +21,7 @@ sRGB = linRGB2sRGB(linRGB);
 %     DT = delaunayTriangulation(XYZ);
 %     CL = DT.ConnectivityList;
 for CS_num = 1:size(CS_list, 1)
-    CS = color_spaces_collection(CS_list{CS_num});
+    CS = color_spaces_collection(CS_list{CS_num}, proLab_param);
     AO = CS.axis_Lab_order;
     fig = figure();
     hold on;

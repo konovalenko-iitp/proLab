@@ -13,7 +13,7 @@ CS_list = {'LMS'; 'deviceRGB'; 'CIE XYZ'; 'CIE xyY'; 'linRGB'; 'sRGB'; 'CIELAB';
 dist_CIEDE2000 = get_CIEDE2000(XYZ, 'CIE XYZ');
 for CS_num = 1:size(CS_list, 1)
     CS_name = CS_list{CS_num};
-    handle = color_dist(CS_name);
+    handle = color_dist(CS_name, proLab_param);
     dist = handle(XYZ);
     fig = figure();
     hold on;

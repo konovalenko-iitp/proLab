@@ -1,8 +1,5 @@
 
 function CS = color_spaces_collection(name, param)
-    if nargin == 1
-        param = proLab_param;
-    end
     switch name
         case 'LMS'
             CS.name = 'LMS';
@@ -50,8 +47,8 @@ function CS = color_spaces_collection(name, param)
             CS.name = 'proLab';
             CS.axis_names = {'$L^+$', '$a^+$', '$b^+$'};
             CS.axis_Lab_order = [1 2 3];
-            CS.transform_into = @(XYZ)XYZ2proLab(XYZ, reference_illuminant, param);
-            CS.transform_from = @(CC)proLab2XYZ(CC, reference_illuminant, param);
+            CS.transform_into = @(XYZ)XYZ2proLab_model(XYZ, reference_illuminant, param);
+            CS.transform_from = @(CC)proLab2XYZ_model(CC, reference_illuminant, param);
         case 'CAM16-UCS'
             CS.name = 'CAM16-UCS';
             CS.axis_names = {'$J''$', '$a''$', '$b''$'};

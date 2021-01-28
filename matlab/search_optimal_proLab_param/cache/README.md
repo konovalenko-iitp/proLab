@@ -1,0 +1,1 @@
+This directory is for storing cache, which makes code faster.

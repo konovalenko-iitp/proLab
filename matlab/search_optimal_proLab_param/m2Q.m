@@ -10,11 +10,11 @@ function Q = m2Q(param)
                  50,   0,  80; ...
                 100,   0,   0];        
     XYZ_points = Lab2XYZ(Lab_goal);
-    proLab_points = XYZ2proLab(XYZ_points, reference_illuminant, param);
+    proLab_points = XYZ2proLab_model(XYZ_points, reference_illuminant, param);
     k = norm(Lab_goal(end,:)) / norm(proLab_points(end,:));
     param.Q = [[k * eye(3, 3), [0; 0; 0]]; 0 0 0 1] * param.Q;
     
-    proLab_points = XYZ2proLab(XYZ_points, reference_illuminant, param);
+    proLab_points = XYZ2proLab_model(XYZ_points, reference_illuminant, param);
     white_direct = Lab_goal(end, :) / norm(Lab_goal(end, :));
     K = proLab_points(end, :)' * white_direct;
     try
@@ -23,7 +23,7 @@ function Q = m2Q(param)
         R = eye(3,3);
     end
     param.Q = [[R, [0; 0; 0]]; 0 0 0 1] * param.Q;
-    proLab_points = XYZ2proLab(XYZ_points, reference_illuminant, param);
+    proLab_points = XYZ2proLab_model(XYZ_points, reference_illuminant, param);
     X = proLab_points * (eye(3,3) - white_direct' * white_direct);
     Y =    Lab_goal   * (eye(3,3) - white_direct' * white_direct);
     K = X' * Y;

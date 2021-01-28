@@ -39,7 +39,7 @@ function plot_MacAd_Ell(CS_name, Y)
     if ~strcmp(CS_name, 'CIE xyY') % !!!!!!! Crutch against outlayer!!!
         raw_params(1,:) = [];
     end
-    CS = color_spaces_collection(CS_name);
+    CS = color_spaces_collection(CS_name, proLab_param);
     num_ell = size(raw_params, 1);
     XYZ = zeros(num_ell, n, 3);
     for ell = 1:num_ell

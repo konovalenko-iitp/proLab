@@ -24,10 +24,8 @@ for i = 1:size(sizes, 2)
 
         proLab = XYZ2proLab(XYZ)
         proLab = XYZ2proLab(XYZ, ref_illum)
-        proLab = XYZ2proLab(XYZ, ref_illum, param)
 
         XYZ = proLab2XYZ(proLab)
         XYZ = proLab2XYZ(proLab, ref_illum)
-        XYZ = proLab2XYZ(proLab, ref_illum, param)
     end
 end

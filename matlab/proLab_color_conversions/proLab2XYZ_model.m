@@ -1,11 +1,5 @@
 
-function XYZ = proLab2XYZ(proLab, ref_illum, param)
-    if nargin < 2
-        ref_illum = reference_illuminant;
-    end
-    if nargin < 3
-        param = proLab_param;
-    end
+function XYZ = proLab2XYZ_model(proLab, ref_illum, param)
     if iscell(proLab)
         XYZ = cell(1, 2);
         for i = 1:2

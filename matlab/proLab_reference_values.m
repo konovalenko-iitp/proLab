@@ -3,7 +3,9 @@ clc;
 clear;
 
 format long
+
 ref_illum = rand(1,3)
+
 XYZ = ref_illum .* [ ...
     0 0 0; ...
     0 0 1; ...
@@ -13,6 +15,7 @@ XYZ = ref_illum .* [ ...
     1 0 1; ...
     1 1 0; ...
     1 1 1]
+
 proLab = XYZ2proLab(XYZ, ref_illum) %% reference result below:
 % proLab =
 %    1.0e+02 *
@@ -24,7 +27,9 @@ proLab = XYZ2proLab(XYZ, ref_illum) %% reference result below:
 %    0.708395299332225   1.736360190126265  -0.568454203481760
 %    1.000000000000000   0.039612237637851   0.432728566346496
 %    1.000000000000000  -0.000000000000000                   0
+
 err = max(max(abs(XYZ - proLab2XYZ(proLab, ref_illum)))) % should be ~zero
+
 format
 
 
