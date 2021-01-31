@@ -12,20 +12,18 @@ described in the following paper
 
 ## The main files are listed below
 
-\matlab\XYZ2proLab.m — function that implements transformation form CIE XYZ color space to proLab color space.
+\matlab\proLab_color_conversions\XYZ2proLab.m — function that implements transformation form CIE XYZ color space to proLab color space.
 
-\matlab\proLab2XYZ.m — function that implements transformation form proLab color space to CIE XYZ color space.
-
-\matlab\projTrans3D.m — function that implements 3D projective transformation.
+\matlab\proLab_color_conversions\proLab2XYZ.m — function that implements transformation form proLab color space to CIE XYZ color space.
 
 \matlab\code_examples.m — script which contains examples of using XYZ2proLab and proLab2XYZ.
 
-\matlab\proLab_param.m — function that stores and returns proLab parameters.
+\matlab\proLab_reference_values.m — script which contains reference values for proLab testing.
+
+\matlab\proLab_color_conversions\proLab_param.m — function that stores and returns proLab parameters.
 
 \matlab\search_optimal_proLab_param.m — script that implements the search optimal proLab parameters.
 
 \matlab\reference_illuminant.m — function that returns CIE XYZ color coordinates of reference illuminant.
 
 \matlab\D65.m — function that returns CIE XYZ color coordinates of D65 standard illuminant.
-
-\matlab\proLab_reference_values.m — script which contains reference values for proLab testing
